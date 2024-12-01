@@ -1,7 +1,8 @@
 const pokeApi = {}
 
-const limit = 5;
-const offset = 0;
+const limit = 10;
+const maxPokemons = 151;
+let offset = 0;
 
 //Funcao que converte o body do response para json
 function convertBodyToJson(listResponses){

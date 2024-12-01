@@ -28,9 +28,27 @@ function getPokemonDetail(pokemonObject){
     return pokemon
 }  
 
-
 pokeApi.getPokemons(limit, offset).then((pokemons = []) => {
     pokemons = pokemons.map(getPokemonDetail)
-    console.log(pokemons)
-    document.getElementById("pokemons").innerHTML = pokemons.map(convertObjectToLi).join('')
+    document.getElementById("pokemons").innerHTML += pokemons.map(convertObjectToLi).join('')
 });                
+
+function loadMore(){
+    offset += 10;
+    if((maxPokemons - offset) <= limit){
+        const newLimit = maxPokemons - offset;
+
+        pokeApi.getPokemons(newLimit, offset).then((pokemons = []) => {
+            pokemons = pokemons.map(getPokemonDetail)
+            document.getElementById("pokemons").innerHTML += pokemons.map(convertObjectToLi).join('')
+        });  
+
+        document.getElementsByClassName("btn-loadMore")[0].remove();
+
+    } else {
+        pokeApi.getPokemons(limit, offset).then((pokemons = []) => {
+            pokemons = pokemons.map(getPokemonDetail)
+            document.getElementById("pokemons").innerHTML += pokemons.map(convertObjectToLi).join('')
+        });
+    }
+}

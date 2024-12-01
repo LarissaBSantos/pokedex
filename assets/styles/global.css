@@ -20,6 +20,15 @@
     color: #313030;
 }
 
+.content .btn-loadMore{
+    border-radius: 1rem;
+    border-style: none;
+    padding: 0.5rem;
+    margin: 1rem;
+    background: #b5b5ee;
+    color: #413f3f;
+}
+
 
 @media screen and (min-width: 992px) {
     .content {
