@@ -1,32 +1,36 @@
-const limit = 5;
-const offset = 0;
-
-const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-
-let pokemons;
-
-function convertObjectToLi(object) {
-    return `<li class="pokemon">
-                <span class="number">#001</span>
-                <span class="name">${object.name}</span>
+//Funcao que converte um objeto para um string li
+function convertObjectToLi(pokemon) {
+    return `<li class="pokemon ${pokemon.type}">
+                <span class="number">#${pokemon.id}</span>
+                <span class="name">${pokemon.name}</span>
 
                 <div class="detail">
 
                     <ol>
-                        <li class="type">grass</li>
-                        <li class="type">poisom</li>
+                        ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
                     </ol>
 
-
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbasaur">
+                    <img src="${pokemon.photo}" alt="${pokemon.name}">
                 </div>
             </li>`
 }
 
-fetch(url)
-    .then((response) => response.json())
-    .then((responseJson) => responseJson.results)
-    .then((pokemonsList) => {
-            document.getElementsByClassName("pokemons")[0].innerHTML = pokemonsList.map(convertObjectToLi).join('')
-        }
-    )
+//Funcao retorna uma lista de pokemons personalizada
+function getPokemonDetail(pokemonObject){
+    const pokemon = new Pokemon();
+
+    pokemon.name = pokemonObject.name;
+    pokemon.id = pokemonObject.id;
+    pokemon.photo = pokemonObject.sprites.other.dream_world.front_default;
+    pokemon.types = pokemonObject.types.map((AType) => AType.type.name);
+    pokemon.type = pokemon.types[0];
+
+    return pokemon
+}  
+
+
+pokeApi.getPokemons(limit, offset).then((pokemons = []) => {
+    pokemons = pokemons.map(getPokemonDetail)
+    console.log(pokemons)
+    document.getElementById("pokemons").innerHTML = pokemons.map(convertObjectToLi).join('')
+});                

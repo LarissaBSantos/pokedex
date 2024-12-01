@@ -20,6 +20,7 @@
 
 .pokemon .name{
     margin-bottom: 0.5rem;
+    text-transform: capitalize;
 }
 
 .pokemon .number{
