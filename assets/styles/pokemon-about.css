@@ -1,0 +1,93 @@
+*{
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.content{
+    background-color: #77c850;
+    border-radius: 0;
+}
+
+.general-info{
+    margin: 1rem;
+}
+
+.about{
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    padding: 2rem 1rem;
+    position: fixed;    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.btn-return{
+    margin-top: 2rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border-style: none;
+    background: #c6c6ff;
+    color: #877272;
+}
+
+.content h1{
+    color: #ffffff;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+#id{
+    float: right;
+}
+
+ol.types{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+ol .type{
+    margin: 0.25rem 0.2rem;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    border-radius: 1rem;
+    background: #c5c3c370;
+}
+
+.about table{
+    width: 100%;
+    text-align: left;
+}
+
+.about td{
+    color: #000000;
+}
+
+.about th{
+    color: #aba7a7;
+    padding: 0.5rem 0; 
+    width: 6.25rem; 
+}
+
+.breeding{
+    margin-top: 1rem;
+}
+
+.breeding #title-table{
+    color: #000000;
+    font-size: 1.3rem;  
+}
+
+.general-info .pokemon-image{
+    text-align: center;
+    margin: 1rem;
+}

@@ -7,8 +7,7 @@
 .content{
     padding: 1rem;
     margin: auto;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     background: beige;
     border: 2px solid bisque;
     border-radius: 1rem;
