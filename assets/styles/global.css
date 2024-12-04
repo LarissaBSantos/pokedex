@@ -4,6 +4,10 @@
     font-weight: 600;
 }
 
+button{
+    cursor: pointer;
+}
+
 .content{
     padding: 1rem;
     margin: auto;

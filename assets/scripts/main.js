@@ -1,6 +1,6 @@
 //Funcao que converte um objeto para um string li
 function convertObjectToLi(pokemon) {
-    return `<li class="pokemon ${pokemon.type}">
+    return `<li class="pokemon ${pokemon.type}" type="button" onclick="window.location.href='../pokemon-about.html';">
                 <span class="number">#${pokemon.id}</span>
                 <span class="name">${pokemon.name}</span>
 
