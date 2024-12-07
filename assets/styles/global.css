@@ -12,7 +12,7 @@ button{
     padding: 1rem;
     margin: auto;
     height: 100vh;
-    background: beige;
+    background: #f5f5dc;
     border: 2px solid bisque;
     border-radius: 1rem;
 }

@@ -5,9 +5,14 @@
     font-weight: 600;
 }
 
+body{
+    background: #f5f5dc;
+}
+
 .content{
     background-color: #77c850;
     border-radius: 0;
+    position: relative;
 }
 
 .general-info{
@@ -16,14 +21,13 @@
 
 .about{
     background-color: #ffffff;
-    color: #000000;
     text-align: center;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 3rem 3rem 0 0;
     padding: 2rem 1rem;
-    position: fixed;    
     bottom: 0;
     left: 0;
     width: 100%;
+    position: absolute;
 }
 
 .btn-return{
@@ -90,4 +94,27 @@ ol .type{
 .general-info .pokemon-image{
     text-align: center;
     margin: 1rem;
+}
+
+@media screen and (max-height: 810px){
+    .about{
+        border-radius: 3rem 0rem 0 3rem;
+        top: 13rem;
+        right: 0;
+        left: initial;
+        position: absolute;
+        width: max-content;
+    }
+
+    .general-info .pokemon-image{
+        text-align: left;
+        margin: 2rem;
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 770px;
+    }
 }
