@@ -11,7 +11,7 @@ button{
 .content{
     padding: 1rem;
     margin: auto;
-    height: 100vh;
+    height: 100%;
     background: #f5f5dc;
     border: 2px solid bisque;
     border-radius: 1rem;
