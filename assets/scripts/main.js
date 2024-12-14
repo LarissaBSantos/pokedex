@@ -1,6 +1,6 @@
 //Funcao que converte um objeto para um string li
 function convertObjectToLi(pokemon) {
-    return `<li class="pokemon ${pokemon.type}" type="button" onclick="window.location.href='../pokemon-about.html';">
+    return `<li class="pokemon ${pokemon.type} go-to-about" type="button" onclick="goToAbout(${pokemon.id})">
                 <span class="number">#${pokemon.id}</span>
                 <span class="name">${pokemon.name}</span>
 
@@ -48,10 +48,10 @@ function getPokemonAboutPage(pokemonObj){
     return pokemon
 }
 
-//Funcao que retorna uma lista de pokemons
+//Chama uma funcao retorna uma lista de pokemons
 pokeApi.getPokemons(limit, offset).then((pokemons = []) => {
-    pokemons = pokemons.map(getPokemonMainPage)
-    document.getElementById("pokemons").innerHTML += pokemons.map(convertObjectToLi).join('')
+    pokemons = pokemons.map(getPokemonMainPage);
+    document.getElementById("pokemons").innerHTML += pokemons.map(convertObjectToLi).join('');
 });                
 
 //Funcao que carrega mais pokemons na tela
@@ -75,10 +75,14 @@ function loadMore(){
     }
 }
 
-//Funcao que carrega o pokemon na tela about
-pokeApi.getPokemon(143).then((pokemon) => {
-    pokemon = getPokemonAboutPage(pokemon);
-    pokemon = convertToHTML(pokemon);
-    document.getElementById("content").innerHTML = pokemon;
-    // console.log(pokemon);
-});
+//Funcao que redireciona para a tela about
+function goToAbout(id) {
+    pokeApi.getPokemon(id)
+    .then(() => {
+        window.location.href = `../pokemon-about.html?id=${id}`;
+    })
+    .catch((err) => {
+        console.error(err);
+        alert('Não foi possível carregar as informações do Pokémon.');
+    });
+}

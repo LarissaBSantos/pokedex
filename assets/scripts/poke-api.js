@@ -47,10 +47,8 @@ pokeApi.getPokemonBreeding = async (id) => {
 pokeApi.getPokemon = async (id) => {
     const generalData = await pokeApi.getPokemonData(id);
     const breedingData = await pokeApi.getPokemonBreeding(id);
-
+    
     pokemon = Object.assign({}, generalData, breedingData);
-
-    // pokemon = getCustomPokemonObject(Object.assign({}, generalData, breedingData));
 
     return pokemon
 }

@@ -48,7 +48,7 @@ function convertToHTML(pokemon) {
                     <tbody>
                         <tr>
                             <th>Gender</th>
-                            <td colspan="2">${pokemon.gender.male}%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${pokemon.gender.female}%</td>
+                            <td colspan="2">♂️ ${pokemon.gender.male}%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♀️${pokemon.gender.female}%</td>
                         </tr>
                         <tr>
                             <th>Egg Groups</th>
@@ -67,4 +67,3 @@ function convertToHTML(pokemon) {
             </div> 
     `
 }
-
