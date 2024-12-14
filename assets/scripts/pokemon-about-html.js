@@ -1,5 +1,6 @@
 //Funcao que converte um objeto para HTML
 function convertToHTML(pokemon) {
+    document.getElementById("content").classList.add(`${pokemon.type}`);
     return `
         <div class="general-info">
             <span id="id">#${pokemon.id}</span>
